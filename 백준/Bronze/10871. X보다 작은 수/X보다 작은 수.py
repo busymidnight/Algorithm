@@ -1,7 +1,7 @@
-nx = list(map(int, input().split()))
+n, x = map(int, input().split())
 listA = list(map(int, input().split()))
 listB = []
 for a in listA:
-    if a<nx[1]:
+    if a<x:
         listB.append(a)
 print(*listB)
