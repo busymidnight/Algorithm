@@ -1,4 +1,3 @@
-
 #과목평점
 scores = {
     "A+" : 4.5,
@@ -11,8 +10,10 @@ scores = {
     "D0" : 1.0,
     "F" : 0.0
 }
-score_sum = 0
-answer = 0
+
+score_sum = 0 #학점의 총합
+answer = 0 #학점 * 과목평점의 합
+
 #전공평점은 전공과목별 (학점 × 과목평점)의 합을 학점의 총합으로 나눈 값
 for _ in range(20):
     sub, num, grade = map(str,input().split())
@@ -20,4 +21,5 @@ for _ in range(20):
         score = scores[grade] 
         answer += score*float(num)
         score_sum += float(num)
-print(answer/score_sum)
+answer = answer/score_sum
+print(answer)
