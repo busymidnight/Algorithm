@@ -1,5 +1,3 @@
-from collections import Counter
-from itertools import combinations
 def solution(clothes):
     answer = 1
     types = [v for k, v in clothes] #의상 종류만 선택한다
