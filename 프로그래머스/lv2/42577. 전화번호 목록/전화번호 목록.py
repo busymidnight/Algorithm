@@ -1,7 +1,14 @@
 def solution(phone_book):
-    phone_book.sort()
-    for i in range(len(phone_book) - 1):
-        if phone_book[i] == phone_book[i+1][:len(phone_book[i])]: #phone_book[i] 만큼 슬라이싱하여 비교한다
-            return False
+    hash_map = {}
+    # 전화번호 목록을 해시 테이블에 저장
+    for phone_number in phone_book:
+        hash_map[phone_number] = 1
+    
+    # 각 전화번호의 접두어가 해시 테이블에 있는지 확인
+    for phone_number in phone_book:
+        prefix = ""
+        for digit in phone_number:
+            prefix += digit
+            if prefix in hash_map and prefix != phone_number:
+                return False
     return True
-        
