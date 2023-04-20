@@ -7,4 +7,5 @@ def solution(numbers):
         while stack and numbers[stack[-1]] < number:
             answer[stack.pop()] = number
         stack.append(i)
+        
     return answer
