@@ -4,7 +4,8 @@ def dfs(k, cnt, dungeons, check):
     answer = max(cnt, answer)
     
     for i in range(len(dungeons)):
-        if check[i] == 0 and k >= dungeons[i][0]: #방문한적 없고 최소피로도가 K보다 작거나 같은 던전
+        #방문한적 없고 최소피로도가 K보다 작거나 같은 던전
+        if check[i] == 0 and k >= dungeons[i][0]: 
             check[i] = 1
             dfs(k-dungeons[i][1], cnt+1, dungeons, check)
             check[i] = 0
